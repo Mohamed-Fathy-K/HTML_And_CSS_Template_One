@@ -1,0 +1,547 @@
+/*#################################### Start Global Rules ####################################*/
+* {
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing   : border-box;
+    box-sizing        : border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+:root {
+    --main-color              : #11cab8;
+    --section-padding         : 60px;
+    --section-background-color: #f3efef;
+    --line-height             : 1.5;
+    --secondary-color         : #2c4856;
+}
+
+.special-heading {
+    color         : #d8d5d5;
+    text-align    : center;
+    font-size     : 20vw;
+    margin        : 0;
+    letter-spacing: -3px;
+
+}
+
+.container {
+    padding  : 0 15px;
+    width    : 600px;
+    margin   : 0 auto;
+    max-width: 100%;
+}
+html{
+    scroll-behavior: smooth;
+}
+/*#################################### End Global Rules ####################################*/
+
+/*#################################### Header Start ####################################*/
+.header {
+    padding: 20px 0;
+}
+
+.header .container {
+    margin         : 0 auto;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    max-width      : 90%;
+}
+
+.header .logo {
+    width: 60px;
+
+}
+
+.header .container .icon {
+    display        : flex;
+    flex-wrap      : wrap;
+    width          : 25px;
+    justify-content: flex-end;
+    cursor         : pointer;
+}
+
+.header .container .icon span {
+    display         : flex;
+    width           : 100%;
+    height          : 3px;
+    background-color: #333;
+    margin-bottom   : 5px;
+}
+
+.header .container .icon span:nth-child(2) {
+    width     : 75%;
+    transition: .3s;
+
+}
+
+.header .container .links:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+
+.header .container .links {
+    position: relative;
+}
+
+.header .container .links ul {
+    list-style      : none;
+    background-color: #f6f6f6;
+    margin          : 0;
+    padding         : 0;
+    position        : absolute;
+    top             : calc(100% + 10px);
+    right           : 0;
+    display         : none;
+}
+
+.header .container .links:hover ul {
+    display: block;
+}
+
+.header .container .links ul::before {
+    content     : '';
+    border-width: 10px;
+    border-color: transparent transparent #f6f6f6 transparent;
+    border-style: solid;
+    position    : absolute;
+    right       : 2.5px;
+    bottom      : 100%;
+}
+
+.header .container .links ul li:not(:last-child) {
+    border-bottom: 1px solid rgb(216, 210, 210);
+}
+
+.header .container .links ul li a {
+    padding        : 15px;
+    display        : block;
+    text-decoration: none;
+    color          : black;
+    min-width      : 200px;
+    transition     : .3s;
+}
+
+.header .container .links ul li a:hover {
+    padding-left : 25px;
+    padding-right: 5px;
+}
+
+/*#################################### Header End ####################################*/
+
+/*#################################### Landing Section Start ####################################*/
+.landing {
+    background-image: url("../imgs/landing.jpg");
+    height          : calc(100vh - 64px);
+    background-size : cover;
+    width           : 100%;
+    overflow        : hidden;
+    display         : grid;
+    justify-content : center;
+    align-content   : center;
+    text-align      : center;
+
+}
+
+.landing .landing-intro h1 {
+    font-weight: bold;
+    font-size  : 50px;
+    color      : var(--main-color);
+    margin     : 0;
+}
+
+.landing .landing-intro .landing-intro-content {
+    width    : 360px;
+    max-width: 100%;
+}
+
+.landing .landing-intro p {
+    font-size  : 19px;
+    line-height: var(--line-height);
+}
+
+/*#################################### Landing Section End ####################################*/
+
+/*#################################### features Start ####################################*/
+.features {
+    background-color: var(--section-background-color);
+}
+
+.features .container {
+    margin               : 30px 0;
+    margin               : auto;
+    display              : grid;
+    text-align           : center;
+    grid-template-columns: 1fr;
+    padding              : 50px;
+    gap                  : 50px;
+}
+
+.features .container .feat i {
+    color: var(--main-color);
+}
+
+.features .container .feat h3 {
+    font-weight: 800;
+}
+
+.features .container .feat p {
+    line-height: var(--line-height);
+    color      : #777;
+    margin     : 0 5px;
+}
+
+/*#################################### features End ####################################*/
+
+/*#################################### Services Start ####################################*/
+.services {
+    padding: var(--section-padding) 0;
+}
+
+.services .container {
+    margin: auto;
+}
+
+.services .container .services-content {
+    padding-top             : 50px;
+    display                 : grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns   : 1fr;
+    gap                     : 10px;
+    padding                 : 20px;
+    margin-top              : 100px;
+}
+
+.services .container .special-heading+p {
+    text-align: center;
+    margin-top: -30px;
+    color     : #797979;
+    font-size : 20px;
+}
+
+.services .container .services-content .content-col:nth-child(1) {
+    display              : grid;
+    grid-template-columns: 1fr;
+    gap                  : 10px;
+}
+
+.services .container .services-content .content-col:nth-child(2) {
+    display: none;
+}
+
+.services .container .services-content .content-col .srv {
+    display       : flex;
+    flex-direction: column;
+    text-align    : center;
+}
+
+.services .container .services-content .content-col .srv .srv-text {
+    flex: 1;
+}
+
+.services .container .services-content .content-col .srv h3 {
+    margin: 0;
+}
+
+.services .container .services-content .content-col .srv i {
+    color     : var(--main-color);
+    flex-basis: 60px;
+}
+
+.services .container .services-content .content-col .srv p {
+    line-height: var(--line-height);
+    color      : #777;
+    font-weight: 400;
+}
+
+.services .container .services-content .content-col .image {
+    position  : relative;
+    text-align: center;
+}
+
+.services .container .services-content .content-col img {
+    width: 260px;
+
+}
+
+.services .container .services-content .content-col .image::after {
+    content         : "";
+    width           : 100px;
+    height          : 446px;
+    background-color: var(--secondary-color);
+    position        : absolute;
+    left            : 258px;
+    top             : -50px;
+    z-index         : -1;
+}
+
+
+
+
+
+/*#################################### Services End ####################################*/
+
+/*#################################### Portfolio Start ####################################*/
+.Portfolio {
+    padding         : var(--section-padding) 0;
+    background-color: var(--section-background-color);
+}
+
+.Portfolio .container .special-heading+p {
+    text-align: center;
+    margin-top: -30px;
+    color     : #797979;
+    font-size : 20px;
+}
+
+.Portfolio .container .Portfolio-content {
+    margin-top           : var(--section-padding);
+    display              : grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap                  : 30px;
+}
+
+.Portfolio .container .Portfolio-content .box {
+    background-color: #f6f6f6;
+}
+
+.Portfolio .container .Portfolio-content img {
+    width: 100%;
+}
+
+.Portfolio .container .Portfolio-content .info {
+    padding   : 20px;
+    text-align: center;
+}
+
+.Portfolio .container .Portfolio-content h2 {
+    margin: 0;
+}
+
+.Portfolio .container .Portfolio-content p {
+    line-height: var(--line-height);
+    margin     : 20px 0 0 0;
+}
+
+/*#################################### Portfolio End ####################################*/
+/*#################################### About Start ####################################*/
+.about {
+    padding: var(--section-padding) 0;
+}
+
+.about .container .special-heading+p {
+    text-align: center;
+    margin-top: -30px;
+    color     : #797979;
+    font-size : 20px;
+}
+
+.about .container .about-content {
+    display       : flex;
+    flex-wrap     : wrap;
+    align-items   : center;
+    flex-direction: column;
+}
+
+.about .container .about-content .image {
+    width   : 250px;
+    height  : 375px;
+    position: relative;
+
+}
+
+.about .container .about-content .text {
+    flex-basis : calc(100% - 500px);
+    text-align : center;
+    line-height: calc(var(--line-height) + 0.5);
+
+}
+
+.about .container .about-content .text p:nth-of-type(1) {
+    font-weight: bold;
+    margin     : 50px 0;
+}
+
+.about .container .about-content .text p:nth-of-type(2) {
+    color: #777;
+}
+
+.about .container .about-content hr {
+    width  : 50%;
+    border : solid var(--main-color) 1px;
+    display: inline-block;
+}
+
+.about .container .about-content img {
+    width: 100%;
+
+}
+
+
+
+/*#################################### About End ####################################*/
+/*#################################### Contact Start ####################################*/
+.Contact {
+    padding         :  var(--section-padding) 0;
+    background-color: var(--section-background-color);
+}
+
+.Contact .container .special-heading+p {
+    text-align: center;
+    margin-top: -30px;
+    color     : #797979;
+    font-size : 20px;
+}
+
+.Contact .container .info {
+    text-align: center;
+    padding-top: var(--section-padding);
+}
+
+.Contact .container .info > p:nth-child(1) {
+    font-size  : 25px;
+    font-weight: 800;
+    color      : var(--secondary-color);
+    letter-spacing: -2px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+.Contact .container .info > a:nth-of-type(1){
+color: var(--main-color );
+font-size: 25px;
+font-weight: 800;
+text-decoration: none;
+}
+.Contact .container .info > div:nth-last-child(1){
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.Contact .container .info > div:nth-last-child(1) .social{
+    margin-left: 5px;
+}
+.Contact .container .info > div:nth-last-child(1) a{
+    color: var(--secondary-color);
+    margin-left:5px ;
+}
+
+/*#################################### Contact End ####################################*/
+/*#################################### Footer Start  ####################################*/
+.footer{
+    background-color: var(--secondary-color);
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+    /* font-weight: bold; */
+    font-size: 18px;
+}
+.footer span{
+    color: var(--main-color);
+}
+
+/*#################################### Footer End ####################################*/
+
+/*#################################### Media Queries Start ####################################*/
+/* X-Small devices (portrait phones, less than 576px) */
+@media (min-width: 575.98px) {
+    .features .container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .special-heading {
+        font-size: 100px;
+    }
+
+    .services .container .services-content {
+        grid-template-columns: minmax(300px, 1fr);
+    }
+
+    .services .container .services-content .content-col:nth-child(1) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    .Contact .container .info > a:nth-of-type(1){
+        font-size  : 35px;
+    }
+    .Contact .container .info > p:nth-child(1) {
+        font-size  : 35px;
+    }
+        
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+
+    .services .container .services-content .content-col .srv {
+        flex-direction: row;
+        text-align    : left;
+    }
+
+    .Portfolio .container .Portfolio-content .info {
+        text-align: left;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+
+    .about .container .about-content {
+        flex-direction : row;
+        justify-content: space-around;
+        padding        : 80px 0;
+    }
+
+    .about .container .about-content .text {
+        padding-left: 50px;
+        text-align  : left;
+    }
+
+    .about .container .about-content .image::after {
+        content         : "";
+        background-color: #d7d6d4;
+        width           : 100px;
+        height          : calc(100% + 80px);
+        position        : absolute;
+        z-index         : -1;
+        left            : -32px;
+        top             : -40px;
+    }
+
+    .about .container .about-content .image::before {
+        content      : "";
+        position     : absolute;
+        width        : 100px;
+        height       : 77%;
+        border-bottom: 90px solid var(--main-color);
+        border-left  : 90px solid var(--main-color);
+        right        : -133px;
+        top          : -40px;
+        z-index      : -1;
+    }
+
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .services .container .services-content .content-col:nth-child(2) {
+        display: block;
+    }
+
+    .services .container .services-content {
+        grid-template-columns: minmax(600px, 2fr) minmax(300px, 1fr);
+    }
+
+    .container {
+        width: 1170px;
+    }
+}
+
+/*#################################### Media Queries End ####################################*/
